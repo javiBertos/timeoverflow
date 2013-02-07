@@ -1,6 +1,6 @@
 
-@RootController = ["$scope", "$http", "$routeParams", "$location", "$rootScope", "CurrentUser", "Category", "Organization",
-($scope, $http, $routeParams, $location, $rootScope, CurrentUser, Category, Organization) ->
+@RootController = ["$scope", "$http", "$routeParams", "$location", "$rootScope", "CurrentUser", "Category", "Organization", "I18n"
+($scope, $http, $routeParams, $location, $rootScope, CurrentUser, Category, Organization, I18n) ->
   $rootScope.brand = "TimeOverflow"
   $scope.whoAmI = () ->
     $scope.currentUser ?= CurrentUser.get()
@@ -18,6 +18,7 @@
   $scope.loadOrganizations = ->
     $scope.organizations = Organization.query {}, (data) ->
       c.addToIdentityMap() for c in data
+  $scope.t = (word) -> I18n.t(word)
   $scope.loadCategories()
   $scope.loadOrganizations()
   $scope.$on "go", (ev, where) ->
