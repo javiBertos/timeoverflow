@@ -1,11 +1,11 @@
 <div>
-  <h1>Usuarios <small>({{ users.length }})</small></h1>
+  <h1>{{ t("Users") }} <small>({{ users.length }})</small></h1>
   <div class='navbar'>
     <div class='navbar-inner'>
       <ul class='nav pull-right'>
-        <button class='btn' ng-click='show.by=null' ng-class="{active: show.by==null}">Por usuario</button>
-        <button class='btn' ng-click='show.by="category"' ng-class="{active: show.by=='category'}">Por categoría</button>
-        <a class='btn btn-primary' href='#/users/new'>Nuevo usuario</a>
+        <button class='btn' ng-click='show.by=null' ng-class="{active: show.by==null}">{{ t("By user") }}</button>
+        <button class='btn' ng-click='show.by="category"' ng-class="{active: show.by=='category'}">{{ t("By category") }}</button>
+        <a class='btn btn-primary' href='#/users/new'>{{ t("New user") }}</a>
       </ul>
     </div>
   </div>
@@ -14,8 +14,8 @@
       <table class='table table-hover table-condensed'>
         <thead>
           <tr>
-            <th>Categoría</th>
-            <th>Miembros</th>
+            <th>{{ t("Category") }}</th>
+            <th>{{ t("Members") }}</th>
           </tr>
         </thead>
         <tbody>
@@ -47,11 +47,11 @@
             </th>
           </tr>
           <tr>
-            <th ng-show="currentUser.superadmin">Organización</th>
-            <th>Código de miembro</th>
-            <th>Nombre usuario</th>
-            <th>Correo</th>
-            <th>Teléfono</th>
+            <th ng-show="currentUser.superadmin">{{ t("Organization") }}</th>
+            <th>{{ t("Member Code") }}</th>
+            <th>{{ t("Name") }}</th>
+            <th>{{ t("E-mail") }}</th>
+            <th>{{ t("Phone") }}</th>
             <th>
           </tr>
         </thead>
@@ -63,8 +63,8 @@
             <td>{{ u.email }}</td>
             <td>{{ u.phone }}</td>
             <td class="hover-actions">
-              <a class="action" href='#/users/{{u.id}}'><i class="icon-eye-open"></i> ver</a>
-              <a class="action" href='#/users/{{u.id}}/edit'><i class="icon-pencil"></i> modificar</a>
+              <a class="action" href='#/users/{{u.id}}'><i class="icon-eye-open"></i>{{ t("View") }}</a>
+              <a class="action" href='#/users/{{u.id}}/edit'><i class="icon-pencil"></i>{{ t("Edit") }}</a>
           </tr>
         </tbody>
       </table>

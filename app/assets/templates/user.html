@@ -2,36 +2,36 @@
   <h1 class="span12">{{ object.username }}</h1>
   <div class="span6">
     <dl class="well">
-      <dt>Organización</dt>
+      <dt>{{ t("Organization") }}</dt>
       <dd>{{ organizations.find(object.organization_id) }}</dd>
-      <dt>Correo electrónico</dt>
+      <dt>{{ t("E-mail") }}</dt>
       <dd>{{ object.email }}</dd>
-      <dt>Administrador</dt>
+      <dt>{{ t("Administrator") }}</dt>
       <dd>
         <ng-switch on="object.admin">
           <i class="icon-ok" style="color:green" ng-switch-when="true"></i>
           <i class="icon-ban-circle" style="color:red" ng-switch-default></i>
         </ng-switch>
       </dd>
-      <dt>Administrador de sistema</dt>
+      <dt>{{ t("Super Administrator") }}</dt>
       <dd>
         <ng-switch on="object.superadmin">
           <i class="icon-ok" style="color:green" ng-switch-when="true"></i>
           <i class="icon-ban-circle" style="color:red" ng-switch-default></i>
         </ng-switch>
       </dd>
-      <dt>Código de miembro</dt>
+      <dt>{{ t("Código de miembro") }}</dt>
       <dd>{{ object.registration_number }}</dd>
-      <dt>Fecha de alta</dt>
+      <dt>{{ t("Fecha de alta") }}</dt>
       <dd>{{ object.registration_date }}</dd>
-      <dt>Número de documento (DNI/Pasaporte/...)</dt>
+      <dt>{{ t("Número de documento") }}</dt>
       <dd>{{ object.identity_document }}</dd>
-      <dt>Teléfonos</dt>
+      <dt>{{ t("Teléfonos") }}</dt>
       <dd>{{ [object.phone, object.alt_phone] }}</dd>
     </dl>
   </div>
   <div class="span6">
-    <h3>Categorías ofrecidas</h3>
+    <h3>{{ t("Categorías ofrecidas") }}</h3>
     <ul>
       <li ng-repeat="cid in object.category_ids">{{ categories.find(cid).fqn }}</li>
     </ul>
