@@ -48,9 +48,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec'
-  gem 'rspec-rails', '~> 2.0'
+  gem "rspec-rails"
   gem 'wrong'
   gem 'bogus'
-  gem "rspec-rails"
 end
