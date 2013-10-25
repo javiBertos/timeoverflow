@@ -5,6 +5,8 @@ gem 'rails-i18n'
 gem 'rails_12factor'
 
 gem 'pg'
+gem 'hstore_translate'
+
 gem 'dalli'
 
 gem 'sass-rails'
@@ -50,4 +52,5 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'wrong'
   gem 'bogus'
+  gem "rspec-rails"
 end
