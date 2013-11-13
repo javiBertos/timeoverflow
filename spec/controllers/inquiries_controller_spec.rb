@@ -17,6 +17,14 @@ describe InquiriesController do
     end
   end
 
+  describe "GET #new" do
+    it "builds a new inquiry" do
+      login(another_member.user)
+
+      get :new
+      expect(assigns(:inquiry)).to be_an_instance_of(Inquiry)
+    end
+  end
 
   describe "GET #show" do
     context "with valid params" do
@@ -76,6 +84,20 @@ describe InquiriesController do
 
           expect(inquiry.title).not_to eq("New title")
           expect(inquiry.description).not_to eq("New description")
+        end
+      end
+    end
+  end
+
+  describe "DELETE #destroy" do
+    context "with valid params" do
+      context "with a logged user" do
+        it "deletes the inquiry" do
+          login(member.user)
+
+          expect {
+            delete :destroy, id: inquiry.id
+          }.to change(Inquiry,:count).by(-1)
         end
       end
     end
