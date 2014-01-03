@@ -184,3 +184,29 @@ es:
     application:
       edit_profile: Modificar mi perfil
       edit_org: "Modificar %{organization}"
+      
+  # views/devise/...
+  
+  devise:
+    shared:
+      Sign in: "Entrar"
+      Sign up: "Registrarse"
+      Forgot your password?: "No recuerdo mi contraseña"
+      Didn't receive confirmation instructions?: "Volver a enviar mail de confirmación"
+      Didn't receive unlock instructions?: "Enviar mail de desbloqueo"
+      Sign in with: "Entrar con"
+    confirmations:
+      new:
+        Resend confirmation instructions: "Volver a enviar mail de confirmación"
+    mailer:
+      Welcome: "Bienvenido"
+      You can confirm your account email through the link below::"Confirma tu cuenta haciendo click en el siguiente link"
+      Confirm my account: "Confirmar cuenta"
+      Hello: "Hola"
+      Someone has requested a link to change your password. You can do this through the link below.: "Se ha solicitado el cambio de tu contraseña. Puedes cambiarlo a través del siguiente link."
+      Change my password: "Cambiar mi contraseña"
+      If you didn't request this, please ignore this email.: "Si tu no has solicitado un cambio de contraseña ignora este mail"
+      Your password won't change until you access the link above and create a new one.: "Tu password no cambiará hasta que no accedas al link que te proporcion"
+      Your account has been locked due to an excessive number of unsuccessful sign in attempts.: "Tu cuenta ha sido bloqueada después de varios intentos fallidos de acceso"
+      Click the link below to unlock your account: "Accede al siguiente link para desbloquear tu cuenta"
+      Unlock my account: "Desbloquear mi cuenta"
