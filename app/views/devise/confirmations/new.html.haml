@@ -4,7 +4,7 @@
   .col-sm-8
     .panel.panel-primary
       .panel-heading
-        %h2.panel-title Resend confirmation instructions
+        %h2.panel-title t(".Resend confirmation instructions")
 
       .panel-body
         - if resource.errors.any?
@@ -16,4 +16,4 @@
             = f.label :email, class: "control-label"
             = f.text_field :email, :required => true, :autofocus => true, class: "form-control"
           .form-group
-            = f.submit "Resend confirmation instructions", class: "btn btn-primary"
+            = f.submit t(".Resend confirmation instructions"), class: "btn btn-primary"
