@@ -1,7 +1,4 @@
 %h1
-  %small
-    - unless  @user.active?(current_organization)
-      = t ".inactive"
   = @user.username
   %small
     = @user.email
@@ -13,8 +10,7 @@
     = image_tag avatar_url(@user, 160)
 
   .col-sm-10
-    :markdown
-      #{@user.description}
+    %p= @user.description
 
     %ul.nav.nav-pills.pull-right
       - if @user == current_user
@@ -24,19 +20,12 @@
             = t "global.edit"
       - else
         %li
-          %a
-            %span.glyphicon.glyphicon-envelope
-            = t "send message"
-      - if admin? || @user != current_user
-        %li
           %a{href: give_time_user_path(@user)}
             %span.glyphicon.glyphicon-time
             = t "global.give_time"
 
-
-
     %dl.dl-horizontal
-      - if @user.date_of_birth.present? && admin?
+      - if @user.date_of_birth.present?
         %dt= User.human_attribute_name(:date_of_birth)
         %dd= l @user.date_of_birth
       - phones = [@user.phone, @user.alt_phone].map(&:presence).compact
@@ -60,9 +49,6 @@
             %td= link_to post, post
             %td= time_ago_in_words post.updated_at
             %td= post.description
-            %td
-              %a{href: give_time_user_path(@user, offer: post.id), title: t("global.give_time")}
-                %span.glyphicon.glyphicon-time
 
   .col-sm-6.inquiries
     .panel.panel-default
